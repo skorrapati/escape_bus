@@ -7,9 +7,9 @@ module LocationsHelper
   end
 
   # Compare the user lat/long with a bus to see if it is "nearby" which for now is 0.01 degress of lat/long.
-  # TODO: Make this a true circular radius
-  # TODO: Give user option of how close
-  def is_nearby?(user_lat, user_long, bus_lat, bus_long)
-    (user_lat - bus_lat).abs <= 0.01 && (user_long - bus_long).abs <= 0.01
+  def is_nearby?(user_lat, user_long, bus_lat, bus_long, distance)
+    nearby_lat = distance / 69
+    nearby_long = distance / 58
+    (user_lat - bus_lat).abs <= nearby_lat && (user_long - bus_long).abs <= nearby_long
   end
 end
