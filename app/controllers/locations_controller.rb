@@ -30,8 +30,6 @@ class LocationsController < ApplicationController
         @nearby_buses << bus
       end
     end
-
-    # TODO: If no buses, return with a notice and redirect to the new or edit page
   end
 
   # GET /locations/new
